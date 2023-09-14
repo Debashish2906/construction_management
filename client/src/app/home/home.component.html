@@ -1,0 +1,25 @@
+<div class="container">
+     
+<div *ngFor="let data of cardData;let i=index" style="display: flex;flex-wrap: wrap; flex-direction: row;gap: 20px;">
+    <div class="max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-white-800 dark:border-white-700">
+        <a href="#"   style="display: flex;justify-content: center;background-color: rgb(200, 193, 193);">
+            <img class="rounded-t-lg" style="width: 300px;" [src]="images[i>=images.length? 0: i]" alt=""  />
+        </a>
+        <div class="p-5">
+            <a href="#">
+                <h5 class="mb-2 text-2xl font-bold tracking-tight text-gray-900 " style="font-weight: bold; font-size: 18px;">{{data.heading}}</h5>
+            </a>
+            <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">{{data.desc}}</p>
+            <p class="mb-3 font-normal text-gray-700 dark:text-gray-400">Date : {{data.createdAt|date}}</p>
+            <a href="#" class="inline-flex items-center px-3 py-2 text-sm font-medium text-center text-white bg-blue-700 rounded-lg hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800">
+                Read more
+                 <svg class="w-3.5 h-3.5 ml-2" aria-hidden="true" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 14 10">
+                    <path stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M1 5h12m0 0L9 1m4 4L9 9"/>
+                </svg>
+            </a>
+        </div>
+    </div>
+</div>
+
+</div>
+<ngx-ui-loader></ngx-ui-loader>

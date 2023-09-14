@@ -1,0 +1,24 @@
+<mat-toolbar color="primary">
+    <button mat-icon-button class="example-icon" aria-label="Example icon-button with menu icon">
+      <mat-icon>menu</mat-icon>
+    </button>
+    <span>DreamHome Reality!!</span>
+    <span class="example-spacer"></span>
+    <button *ngIf="!isLoggedin" mat-raised-button  routerLink="/login" color="accent" class="example-icon favorite-icon" aria-label="Example icon-button with heart icon" >
+      Login
+    </button>
+    &nbsp;&nbsp;&nbsp;
+    <button *ngIf="!isLoggedin" mat-raised-button routerLink="/register" color="accent" class="example-icon" aria-label="Example icon-button with share icon">
+      Register
+    </button>
+    <button *ngIf=" isAdmin && isLoggedin" mat-raised-button  routerLink="/add-task"  color="accent" class="example-icon favorite-icon" aria-label="Example icon-button with heart icon" >
+        Add Task
+      </button>
+      &nbsp;&nbsp;&nbsp;
+      <button *ngIf="isLoggedin" mat-raised-button (click)="logout()" color="accent" class="example-icon" aria-label="Example icon-button with share icon">
+        Logout
+      </button>
+  </mat-toolbar>
+  <div class="content">
+    <router-outlet></router-outlet>
+  </div>
